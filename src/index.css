@@ -86,3 +86,6 @@
 .-rotate-360 {
   @apply rotate-[-360deg]
 }
+body {
+  cursor: none;
+}
