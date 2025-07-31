@@ -36,37 +36,38 @@ import {
   yourlogo,
 } from "../assets";
 
+// src/constants/index.js (or wherever your navigation array is located)
+
 export const navigation = [
   {
     id: "0",
-    title: "Features",
-    url: "#features",
+    title: "Home",
+    url: "/", // Changed from "#features" to the root path
   },
   {
     id: "1",
-    title: "Pricing",
-    url: "#pricing",
+    title: "About",
+    url: "/about", // Changed from "#pricing" to a new route path
   },
   {
     id: "2",
-    title: "How to use",
-    url: "#how-to-use",
+    title: "Services",
+    url: "/services", // Changed from "#how-to-use" to a new route path
   },
   {
     id: "3",
-    title: "Roadmap",
-    url: "#roadmap",
+    title: "Blogs",
+    url: "/blogs", // Changed from "#roadmap" to a new route path
   },
   {
     id: "4",
-    title: "New account",
-    url: "#signup",
-    onlyMobile: true,
+    title: "Careers",
+    url: "/careers", // Changed from "#roadmap" to a new route path
   },
   {
     id: "5",
-    title: "Sign in",
-    url: "#login",
+    title: "Contact Us",
+    url: "/contact", // Changed from "#contact" to a new route path
     onlyMobile: true,
   },
 ];
