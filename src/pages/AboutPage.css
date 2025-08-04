@@ -1,0 +1,15 @@
+/* AboutPage.css */
+
+/* Sets a full-page background image */
+body {
+    background-image: url('../assets/hero/hero-background.jpg'); /* Adjust the path as necessary */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Optional: Sets a specific color for the quote border */
+.border-color-1 {
+    border-color: #2e6ff9; /* Example color, adjust as needed */
+}
