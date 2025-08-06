@@ -1,0 +1,99 @@
+/* -------------------------------------------
+cursor
+------------------------------------------- */
+
+/* Hide the default system cursor */
+body {
+  cursor: none !important; 
+}
+
+.mil-ball {
+  width: 20px;
+  height: 20px;
+  position: fixed;
+  z-index: 9999; /* Ensure it's on top of other content */
+  background-color: rgb(245, 222, 179); /* Changed to fully opaque Wheat color */
+  border-radius: 50%;
+  pointer-events: none; /* Allows clicks to pass through */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  opacity: 1; /* Set to full opacity for maximum visibility */
+  /* Smooth transition for movement */
+  transition: transform 0.1s ease-out, background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.mil-ball .mil-icon-1 {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  transition: transform 0.3s ease; /* Transition for icon scaling */
+}
+
+.mil-ball .mil-icon-1 svg {
+  fill: rgba(0, 0, 0, 0.9); /* Icon color remains dark for contrast against wheat */
+}
+
+.mil-ball .mil-more-text,
+.mil-ball .mil-choose-text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  display: block;
+  color: rgba(0, 0, 0, 0.9); /* Text color remains dark for contrast against wheat */
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Transition for text scaling */
+  opacity: 0; /* Initially hidden */
+}
+
+/* Styles when the cursor is in an 'accent' state (e.g., hovering over an interactive element) */
+.mil-ball.mil-accent {
+  background-color: #9333ea; /* Changed accent color to a brighter purple for better contrast */
+  opacity: 1;
+  width: 60px; /* Example: make it larger on accent */
+  height: 60px;
+}
+
+.mil-ball.mil-accent .mil-icon-1 {
+  transform: scale(1); /* Show icon on accent */
+}
+
+.mil-ball.mil-accent .mil-icon-1 svg {
+  fill: rgb(255, 255, 255); /* Icon color remains white on accent for contrast */
+}
+
+/* Example: Show specific text on accent (you'd need logic in JS to apply this) */
+/* .mil-ball.mil-accent .mil-more-text {
+  transform: scale(1);
+  opacity: 1;
+} */
+
+
+@media screen and (max-width: 1200px) {
+  .mil-ball {
+    display: none; /* Hide custom cursor on smaller screens */
+  }
+}
+
+/* -------------------------------------------
+hidden elements (from your provided CSS, not directly cursor related)
+------------------------------------------- */
+
+.mil-hidden-elements .mil-dodecahedron,
+.mil-hidden-elements .mil-lines,
+.mil-hidden-elements .mil-arrow {
+  display: none;
+}

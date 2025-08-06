@@ -182,17 +182,17 @@ const ContactPage = () => {
             <div className="space-y-6">
               <div className="contact-info-item backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all duration-300 transform hover:scale-105">
                 <h3 className="text-lg font-bold text-purple-400 mb-2 uppercase tracking-wider">Email</h3>
-                <p className="text-white/90 text-lg">contact@example.com</p>
+                <p className="text-white/90 text-lg">info@encegenailabs.com</p>
               </div>
               
               <div className="contact-info-item backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all duration-300 transform hover:scale-105">
                 <h3 className="text-lg font-bold text-purple-400 mb-2 uppercase tracking-wider">Phone</h3>
-                <p className="text-white/90 text-lg">+1 (555) 123-4567</p>
+                <p className="text-white/90 text-lg">+919226113909</p>
               </div>
               
               <div className="contact-info-item backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all duration-300 transform hover:scale-105">
                 <h3 className="text-lg font-bold text-purple-400 mb-2 uppercase tracking-wider">Address</h3>
-                <p className="text-white/90 text-lg">123 Business St, City, State 12345</p>
+                <p className="text-white/90 text-lg">address : BA HUB , Office no : 03 , Sambhaji Nagar (Baif road) , Near BA  Varmont Society , Wagholi , Pune- 412207</p>
               </div>
             </div>
           </div>
