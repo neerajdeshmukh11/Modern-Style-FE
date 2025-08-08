@@ -1,0 +1,217 @@
+.careers-background {
+  min-height: 100vh;
+  width: 100vw;
+  background:
+    url('./hero-background.jpg') center center/cover no-repeat,
+    linear-gradient(120deg, #2c164d 0%, #1a1a30 80%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.careers-container {
+  max-width: 1280px;
+  width: 100%;
+  padding: 2rem;
+  backdrop-filter: blur(2px) brightness(0.7);
+  background: rgba(30, 25, 51, 0.5);
+  border-radius: 32px;
+  box-shadow: 0 0 40px 12px rgba(80, 0, 120, 0.12);
+  margin: 2rem auto;
+  color: #ded9ff;
+}
+
+/* Solid Title (no gradient, no glitch) */
+.animate-gradient-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 0.75rem;
+  color: #e14efb;
+  letter-spacing: 2px;
+}
+
+.shadowed-title {
+  text-shadow: 0 4px 24px #0b001b, 0 2px 0 #b383ee70;
+}
+
+.careers-intro {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Job list grid */
+.jobs-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+/* Card style */
+.job-card {
+  background: linear-gradient(120deg, rgba(68, 20, 104, 0.79), rgba(21, 19, 43, 0.94) 80%);
+  color: #ded9ff;
+  border-radius: 18px;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  box-shadow: 0 0 24px 6px #6c26a121, 0 0 2px #4739b360;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s, transform 0.2s;
+  border: 1px solid #5e1cd361;
+  opacity: 0;
+  transform: translateY(-80px);
+  animation: dropIn 0.8s ease-out forwards;
+}
+
+/* Drop-in animation */
+@keyframes dropIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover effect */
+.job-card:hover {
+  box-shadow: 0 0 48px 8px #c037ff29, 0 0 6px #6141f7ee;
+  transform: scale(1.027);
+}
+
+.job-card-header h2 {
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: 700;
+  color: #e14efb;
+}
+
+.location, .job-type {
+  display: inline-block;
+  font-size: 0.95rem;
+  background: #291653cc;
+  border-radius: 8px;
+  padding: 2px 7px;
+  margin-right: 7px;
+  color: #aae2ff;
+  font-weight: 500;
+  margin-top: 7px;
+}
+
+.job-about {
+  margin: 0.7rem 0 0 0;
+  font-size: 1rem;
+  color: #c7baff;
+}
+
+/* Fixed Apply button */
+.animated-apply-btn {
+  position: relative;
+  padding: 0.70em 2.25em;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(90deg, #9355ff 0%, #e14efb 40%, #35bbfc 100%);
+  border: none;
+  border-radius: 100px;
+  text-shadow: 0 4px 14px #210935b3;
+  box-shadow: 0 0 20px 4px #c037ff43, 0 2px 6px #6141f726;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.22s cubic-bezier(.22,.68,.65,1.12), box-shadow 0.23s;
+  z-index: 1;
+  will-change: transform;
+  outline: none;
+  user-select: none;
+  letter-spacing: 1.5px;
+  animation: pulseBtn 2s ease-in-out infinite;
+}
+
+@keyframes pulseBtn {
+  0%, 100% { box-shadow: 0 0 12px 3px #e14efb27; }
+  50% { box-shadow: 0 0 26px 8px #c037ff44; }
+}
+
+.animated-apply-btn:active {
+  transform: scale(0.97);
+}
+
+.animated-apply-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 36px 12px #e14efb77, 0 0 2px #35bbfc71;
+}
+
+.animated-apply-btn .shine {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent 60%, #fff8 85%, transparent 100%);
+  filter: blur(1px);
+  opacity: 0.45;
+  transform: skewX(-25deg);
+  pointer-events: none;
+  animation: shineMove 2s ease-in-out infinite;
+  z-index: 2;
+}
+
+@keyframes shineMove {
+  0% { left: -80%; opacity: 0.23; }
+  70% { left: 130%; opacity: 0.77; }
+  100% { left: 150%; opacity: 0.1; }
+}
+
+.fixed-apply-btn {
+  position: fixed;
+  right: 3.5vw;
+  bottom: 3vw;
+  z-index: 101;
+  box-shadow: 0 0 36px 8px #a228fb92, 0 8px 32px #19163477;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .careers-container {
+    max-width: 98vw;
+    padding: 1rem 0.5rem;
+    border-radius: 14px;
+  }
+  .jobs-list {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .job-card {
+    padding: 1.2rem 0.8rem 1rem 0.8rem;
+    font-size: 0.97rem;
+  }
+  .animate-gradient-title {
+    font-size: 1.9rem;
+    line-height: 1.22;
+    padding-top: 2vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .fixed-apply-btn {
+    right: 6vw;
+    bottom: 3vw;
+    padding: 0.6em 1.3em;
+    font-size: 1rem;
+  }
+  .animate-gradient-title {
+    font-size: 1.4rem;
+    line-height: 1.22;
+    padding-top: 2vw;
+  }
+}

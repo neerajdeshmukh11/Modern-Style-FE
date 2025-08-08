@@ -1,15 +1,15 @@
-import { Link, useLocation } from "react-router-dom"; // IMPORT Link HERE
+import { Link, useLocation } from "react-router-dom";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 
-import Encegen from "../assets/Encegen.png";
-import { navigation } from "../constants"; // Assuming this path is correct
-import Button from "./Button"; // Assuming this is your custom Button component
-import MenuSvg from "../assets/svg/MenuSvg"; // Assuming this is your MenuSvg component
-import { HamburgerMenu } from "./design/Header"; // Assuming this is your HamburgerMenu component
-import { useState } from "react"; // Already imported, just for clarity
+import Encegen from "../assets/encegen-logo.png";
+import { navigation } from "../constants";
+import Button from "./Button";
+import MenuSvg from "../assets/svg/MenuSvg";
+import { HamburgerMenu } from "./design/Header";
+import { useState } from "react";
 
 const Header = () => {
-  // Use 'location' to get the current route information
+  // Get current route
   const location = useLocation();
   const [openNavigation, setOpenNavigation] = useState(false);
 
@@ -24,10 +24,7 @@ const Header = () => {
   };
 
   const handleClick = () => {
-    // This function closes the mobile navigation and enables scrolling
-    // after a link is clicked.
-    if (!openNavigation) return; // Only do something if nav is open
-
+    if (!openNavigation) return;
     enablePageScroll();
     setOpenNavigation(false);
   };
@@ -39,11 +36,22 @@ const Header = () => {
       }`}
     >
       <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
-        {/* Logo Link: Changed from <a> href="#hero" to <Link to="/"> */}
-        <Link className="block w-[12rem] xl:mr-8" to="/">
-          <img src={Encegen} width={190} height={40} alt="Encegen" />
-        </Link>
+        {/* LOGO + TITLE + SUBTEXT */}
+        <div className="flex items-center xl:mr-8">
+          <Link className="block w-[12rem] mr-3" to="/">
+            <img src={Encegen} width={190} height={40} alt="Encegen" />
+          </Link>
+          <div className="ml-[-4rem] mt-[-0.5rem]">
+            <h1 className="text-3xl font-bold text-n-1 leading-tight">
+              encegen 
+            </h1>
+            <p className="text-xs mt-[-0.2rem] leading-snug max-w-[180px] ml-[1.4rem]">
+              Ai Labs Pvt Ltd
+            </p>
+          </div>
+        </div>
 
+        {/* MAIN NAVIGATION */}
         <nav
           className={`${
             openNavigation ? "flex" : "hidden"
@@ -51,20 +59,16 @@ const Header = () => {
         >
           <div className="relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row">
             {navigation.map((item) => (
-              <Link // CHANGED from <a> to <Link>
+              <Link
                 key={item.id}
-                to={item.url} // CHANGED from href to to
-                onClick={handleClick} // Keep your existing handleClick
+                to={item.url}
+                onClick={handleClick}
                 className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
                   item.onlyMobile ? "lg:hidden" : ""
                 } px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold ${
-                  // Logic for active link styling: Compare item.url with location.pathname
-                  // If you still have *some* in-page links (like #features) that you want to highlight
-                  // when on the home page, you might need more complex logic here.
-                  // For now, this assumes all main nav links are full routes.
                   item.url === location.pathname
-                    ? "z-2 lg:text-n-1" // Active state
-                    : "lg:text-n-1/50" // Inactive state
+                    ? "z-2 lg:text-n-1"
+                    : "lg:text-n-1/50"
                 } lg:leading-5 lg:hover:text-n-1 xl:px-12`}
               >
                 {item.title}
@@ -75,11 +79,12 @@ const Header = () => {
           <HamburgerMenu />
         </nav>
 
-        {/* "Contact Us" Button: Changed from href="#login" to to="/contact" */}
-        <Button className="hidden lg:flex" to="/contact"> {/* Changed href to to */}
+        {/* "Contact Us" Button */}
+        <Button className="hidden lg:flex" to="/contact">
           Contact Us
         </Button>
 
+        {/* Hamburger Button for mobile */}
         <Button
           className="ml-auto lg:hidden"
           px="px-3"
