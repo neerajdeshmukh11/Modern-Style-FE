@@ -7,28 +7,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      // ---- PRELOADER ADDITIONS START ----
+      /* ---- PRELOADER / SLIDER ADDITIONS START ---- */
       colors: {
-        'ai-blue': '#30e5f1',
-        'ai-dark': '#11092d',
-        'ai-neon': '#67e7fe',
-      },
-      boxShadow: {
-        neon: '0 0 32px 0 #30e5f1cc, 0 0 16px 0 #0ff7',
-      },
-      animation: {
-        fadeIn: "fadeInText 0.8s cubic-bezier(.42,.87,.8,.98) both"
-      },
-      keyframes: {
-        fadeInText: {
-          from: { opacity: '0', transform: 'translateY(22px) scale(0.97)' },
-          to: { opacity: '1', transform: 'none' },
-        }
-      },
-      // ---- PRELOADER ADDITIONS END ----
-
-      // [YOUR EXISTING THEME HERE --- UNCHANGED:]
-      colors: {
+        // Your existing nested colors come below
         color: {
           '1': '#AC6AFF',
           '2': '#FFC876',
@@ -94,8 +75,35 @@ export default {
           '3': 'hsl(var(--chart-3))',
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))'
+        },
+
+        // === New slider/preloader specific colors ===
+        'ai-blue': '#30e5f1',
+        'ai-dark': '#11092d',
+        'ai-neon': '#67e7fe',
+      },
+
+      boxShadow: {
+        // Your existing shadows remain intact if any
+
+        // === New shadows for slider and preloader neon effect===
+        neon: '0 0 32px 0 #30e5f1cc, 0 0 16px 0 #0ff7',
+        sliderNav: '0 0 12px #30e5f1cc, 0 0 24px #0ff7',
+      },
+
+      animation: {
+        // Your existing animations intact if any
+        fadeIn: "fadeInText 0.8s cubic-bezier(.42,.87,.8,.98) both"
+      },
+      
+      keyframes: {
+        fadeInText: {
+          from: { opacity: '0', transform: 'translateY(22px) scale(0.97)' },
+          to: { opacity: '1', transform: 'none' },
         }
       },
+      /* ---- PRELOADER / SLIDER ADDITIONS END ---- */
+
       fontFamily: {
         sans: [
           'var(--font-sora)',
@@ -148,16 +156,13 @@ export default {
       addBase({});
       addComponents({
         ".container": {
-          "@apply max-w-[77.5rem] mx-auto px-5 md:px-10 lg:px-15 xl:max-w-[87.5rem]":
-            {},
+          "@apply max-w-[77.5rem] mx-auto px-5 md:px-10 lg:px-15 xl:max-w-[87.5rem]": {},
         },
         ".h1": {
-          "@apply font-semibold text-[2.5rem] leading-[3.25rem] md:text-[2.75rem] md:leading-[3.75rem] lg:text-[3.25rem] lg:leading-[4.0625rem] xl:text-[3.75rem] xl:leading-[4.5rem]":
-            {},
+          "@apply font-semibold text-[2.5rem] leading-[3.25rem] md:text-[2.75rem] md:leading-[3.75rem] lg:text-[3.25rem] lg:leading-[4.0625rem] xl:text-[3.75rem] xl:leading-[4.5rem]": {},
         },
         ".h2": {
-          "@apply text-[1.75rem] leading-[2.5rem] md:text-[2rem] md:leading-[2.5rem] lg:text-[2.5rem] lg:leading-[3.5rem] xl:text-[3rem] xl:leading-tight":
-            {},
+          "@apply text-[1.75rem] leading-[2.5rem] md:text-[2rem] md:leading-[2.5rem] lg:text-[2.5rem] lg:leading-[3.5rem] xl:text-[3rem] xl:leading-tight": {},
         },
         ".h3": {
           "@apply text-[2rem] leading-normal md:text-[2.5rem]": {},
@@ -172,8 +177,7 @@ export default {
           "@apply font-semibold text-lg leading-8": {},
         },
         ".body-1": {
-          "@apply text-[0.875rem] leading-[1.5rem] md:text-[1rem] md:leading-[1.75rem] lg:text-[1.25rem] lg:leading-8":
-            {},
+          "@apply text-[0.875rem] leading-[1.5rem] md:text-[1rem] md:leading-[1.75rem] lg:text-[1.25rem] lg:leading-8": {},
         },
         ".body-2": {
           "@apply font-light text-[0.875rem] leading-6 md:text-base": {},
@@ -182,8 +186,7 @@ export default {
           "@apply text-sm": {},
         },
         ".tagline": {
-          "@apply font-grotesk font-light text-xs tracking-tagline uppercase":
-            {},
+          "@apply font-grotesk font-light text-xs tracking-tagline uppercase": {},
         },
         ".quote": {
           "@apply font-code text-lg leading-normal": {},

@@ -34,7 +34,7 @@ const ContactPage = () => {
     // --- End client-side check ---
 
     // Replace 'YOUR_ACCESS_KEY_HERE' with your actual Web3Forms Access Key
-    const accessKey = 'ddae0758-2f42-4203-8144-680863910bff'; 
+    const accessKey = '9b43c779-5372-4cd9-a2b4-967e8d1cc9f7'; 
 
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
@@ -107,7 +107,7 @@ const ContactPage = () => {
             <div className="contact-form backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl p-8 shadow-2xl">
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Hidden input for Web3Forms access key */}
-                <input type="hidden" name="access_key" value="ddae0758-2f42-4203-8144-680863910bff" />
+                <input type="hidden" name="access_key" value="9b43c779-5372-4cd9-a2b4-967e8d1cc9f7" />
                 {/* You can also add a hidden honeypot field for spam protection (optional) */}
                 <input type="hidden" name="botcheck" className="honeypot-field" />
 
