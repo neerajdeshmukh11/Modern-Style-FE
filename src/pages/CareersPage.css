@@ -48,9 +48,14 @@
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
   margin-top: 1rem;
+  align-items: stretch; /* ✅ makes items equal height in a row */
 }
 
-/* Card style */
+.jobs-list a {
+  display: block;   /* ✅ make Link behave like block container */
+  height: 100%;     /* ✅ fill the grid cell height */
+}
+
 .job-card {
   background: linear-gradient(120deg, rgba(68, 20, 104, 0.79), rgba(21, 19, 43, 0.94) 80%);
   color: #ded9ff;
@@ -64,6 +69,13 @@
   opacity: 0;
   transform: translateY(-80px);
   animation: dropIn 0.8s ease-out forwards;
+
+  /* ✅ keep height consistent across all cards */
+  height: 100%;           /* match the Link container */
+  min-height: 320px;      /* adjust to your preferred height */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 /* Drop-in animation */
