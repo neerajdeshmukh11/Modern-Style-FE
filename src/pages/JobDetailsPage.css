@@ -1,0 +1,88 @@
+.details-background {
+  min-height: 100vh;
+  width: 100%;
+  background: url('./hero-background.jpg') center center/cover no-repeat,
+    linear-gradient(120deg, #2c164d 0%, #1a1a30 80%);
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.details-container {
+  max-width: 1100px;
+  width: 100%;
+  background: rgba(30, 25, 51, 0.6);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(80, 0, 120, 0.25);
+  color: #ded9ff;
+}
+
+.details-main-title {
+  text-align: center;
+  font-size: 2.4rem;
+  color: #e14efb;
+  margin-bottom: 2rem;
+  text-shadow: 0 4px 24px #0b001b, 0 2px 0 #b383ee70;
+}
+
+.job-details-card {
+  background: linear-gradient(120deg, rgba(68, 20, 104, 0.85), rgba(21, 19, 43, 0.92) 80%);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 0 24px 6px #6c26a121;
+  border: 1px solid #5e1cd361;
+}
+
+.job-details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.job-details-header h2 {
+  color: #e14efb;
+  margin: 0;
+}
+
+.details-meta {
+  font-size: 0.95rem;
+  color: #aae2ff;
+  margin-left: 1rem;
+}
+
+.job-details-about {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: #c7baff;
+}
+
+h3 {
+  color: #35bbfc;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+ul {
+  margin-left: 1.2rem;
+  margin-bottom: 1rem;
+  color: #ded9ff;
+}
+
+.apply-btn-side {
+  padding: 0.5em 1.4em;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, #9355ff, #e14efb, #35bbfc);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.4);
+  transition: 0.2s ease-in-out;
+}
+.apply-btn-side:hover {
+  transform: scale(1.05);
+}

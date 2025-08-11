@@ -1,8 +1,10 @@
 import React from "react";
 import "./CareersPage.css";
+import { Link, useNavigate } from "react-router-dom";
 
 const jobs = [
   {
+    id: "ai-ml-developer",
     title: "AI/ML Developer",
     location: "Pune, India",
     type: "Full-time",
@@ -10,6 +12,7 @@ const jobs = [
       "We are seeking an innovative AI/ML Developer to design, develop, and deploy intelligent systems for real-world applications. You’ll work closely with our product and data teams to build predictive models and AI-driven solutions.",
   },
   {
+    id: "full-stack-developer",
     title: "Full Stack Developer",
     location: "Pune, India",
     type: "Full-time",
@@ -17,6 +20,7 @@ const jobs = [
       "We are looking for a Full Stack Developer to build dynamic, scalable, and high-performance web applications using modern technologies.",
   },
   {
+    id: "business-development-manager",
     title: "Business Development Manager",
     location: "Pune, India",
     type: "Full-time",
@@ -24,6 +28,7 @@ const jobs = [
       "We are seeking a result-driven Business Development Manager to expand our client base and strengthen our market presence.",
   },
   {
+    id: "sales-executive",
     title: "Sales Executive",
     location: "Pune, India",
     type: "Full-time",
@@ -31,6 +36,7 @@ const jobs = [
       "We are looking for energetic Sales Executives to drive product/service sales and meet revenue goals.",
   },
   {
+    id: "graphic-designer",
     title: "Graphic Designer",
     location: "Pune, India",
     type: "Full-time",
@@ -38,6 +44,7 @@ const jobs = [
       "We are hiring a creative Graphic Designer to produce engaging and visually appealing designs for branding and marketing purposes.",
   },
   {
+    id: "telecaller",
     title: "Telecaller",
     location: "Pune, India",
     type: "Full-time",
@@ -45,6 +52,7 @@ const jobs = [
       "We are seeking Telecallers to handle customer inquiries and generate leads through outbound calls.",
   },
   {
+    id: "sap-consultant",
     title: "SAP Consultant",
     location: "Pune, India",
     type: "Full-time",
@@ -52,6 +60,7 @@ const jobs = [
       "We are looking for an SAP Consultant to implement, configure, and support SAP solutions for clients.",
   },
   {
+    id: "sap-trainer",
     title: "SAP Trainer",
     location: "Pune, India",
     type: "Part-time/Contract",
@@ -61,6 +70,8 @@ const jobs = [
 ];
 
 const CareersPage = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="careers-background">
       <div className="careers-container">
@@ -70,44 +81,39 @@ const CareersPage = () => {
         <p className="careers-intro">
           Join us in shaping the future. Explore our openings below!
         </p>
+
         <div className="jobs-list">
           {jobs.map((job, idx) => (
-            <div
-              className="job-card"
-              style={{ animationDelay: `${idx * 0.15}s` }}
-              key={job.title + idx}
+            <Link
+              key={job.id}
+              to={`/job#${job.id}`} // ✅ Link to specific section
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+                display: "block",
+                height: "100%"
+              }}
             >
-              <div className="job-card-header">
-                <h2>{job.title}</h2>
-                <span className="location">{job.location}</span>
-                <span className="job-type">{job.type}</span>
+              <div
+                className="job-card"
+                style={{ animationDelay: `${idx * 0.15}s` }}
+              >
+                <div className="job-card-header">
+                  <h2>{job.title}</h2>
+                  <span className="location">{job.location}</span>
+                  <span className="job-type">{job.type}</span>
+                </div>
+                <p className="job-about">{job.about}</p>
               </div>
-              <p className="job-about">{job.about}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
 
-      {/* ✅ Fixed global Apply Now button with prompt for job role */}
+      {/* Global Apply Now — goes to top of JobDetailsPage */}
       <button
         className="animated-apply-btn fixed-apply-btn"
-        onClick={() => {
-          const role = prompt("Which role are you applying for?");
-          if (!role) {
-            alert("Please enter a valid role before sending your application.");
-            return;
-          }
-
-          const receiver = "hr@encegenailabs.com";
-          const subject = `Job Application – ${role}`;
-          const body = `Dear HR,%0D%0A%0D%0APlease find attached my resume for the position of ${role}.%0D%0A%0D%0AThanks & Regards,`;
-
-          const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(receiver)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-          // Open Gmail immediately from user click event
-          window.open(gmailURL, "_blank", "noopener,noreferrer");
-        }}
-
+        onClick={() => navigate("/job")}
       >
         <span>Apply Now</span>
         <span className="shine"></span>
