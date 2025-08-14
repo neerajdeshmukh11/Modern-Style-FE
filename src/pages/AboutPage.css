@@ -1,15 +1,83 @@
-/* AboutPage.css */
-
-/* Sets a full-page background image */
-body {
-    background-image: url('../assets/hero/hero-background.jpg'); /* Adjust the path as necessary */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+/* Main Heading */
+.main-about-heading {
+  font-size: 3rem;
+  font-weight: 900;
+  text-align: center;
+  color: white;
+  margin-bottom: 4rem;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.65);
 }
 
-/* Optional: Sets a specific color for the quote border */
-.border-color-1 {
-    border-color: #2e6ff9; /* Example color, adjust as needed */
+/* Section spacing */
+.about-section,
+.about-section-text {
+  margin-bottom: 5rem;
+}
+
+/* Section Titles */
+.section-title {
+  color: white;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Paragraphs */
+.about-paragraph {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 1.5rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Quotes */
+.about-quote {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 2rem auto;
+  padding: 1rem;
+  border-left: 4px solid #a855f7;
+  border-radius: 0.5rem;
+  max-width: 800px;
+  text-align: center;
+  background: none; /* ✅ No background */
+}
+
+/* Transparent cards */
+.about-card {
+  background: transparent; /* ✅ No fill */
+  backdrop-filter: none;   /* ✅ No blur background */
+  border: 1px solid rgba(255, 255, 255, 0.15); /* thin border for visibility */
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.05); /* Optional subtle hover background */
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.about-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.about-card-text {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
 }

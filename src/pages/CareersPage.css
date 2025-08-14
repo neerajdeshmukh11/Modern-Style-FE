@@ -1,9 +1,11 @@
 .careers-background {
   min-height: 100vh;
   width: 100vw;
-  background:
-    url('./hero-background.jpg') center center/cover no-repeat,
-    linear-gradient(120deg, #2c164d 0%, #1a1a30 80%);
+  background-image: url('./hero-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,53 +50,41 @@
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
   margin-top: 1rem;
-  align-items: stretch; /* ✅ makes items equal height in a row */
+  align-items: stretch; /* ✅ equal height rows */
 }
 
 .jobs-list a {
-  display: block;   /* ✅ make Link behave like block container */
-  height: 100%;     /* ✅ fill the grid cell height */
+  display: block;
+  height: 100%;
 }
 
+/* ✅ Transparent job cards */
 .job-card {
-  background: linear-gradient(120deg, rgba(68, 20, 104, 0.79), rgba(21, 19, 43, 0.94) 80%);
+  background: transparent; /* Removed purple gradient fill */
   color: #ded9ff;
   border-radius: 18px;
-  padding: 2rem 1.5rem 1.5rem 1.5rem;
-  box-shadow: 0 0 24px 6px #6c26a121, 0 0 2px #4739b360;
+  padding: 2rem 1.5rem 1.5rem;
+  box-shadow: 0 0 24px 6px rgba(0, 0, 0, 0.15); /* subtle shadow */
   position: relative;
   overflow: hidden;
   transition: box-shadow 0.3s, transform 0.2s;
-  border: 1px solid #5e1cd361;
+  border: 1px solid rgba(255, 255, 255, 0.15); /* subtle border */
   opacity: 0;
   transform: translateY(-80px);
   animation: dropIn 0.8s ease-out forwards;
-
-  /* ✅ keep height consistent across all cards */
-  height: 100%;           /* match the Link container */
-  min-height: 320px;      /* adjust to your preferred height */
+  height: 100%;
+  min-height: 320px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
-/* Drop-in animation */
 @keyframes dropIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-80px);
-  }
-  80% {
-    opacity: 1;
-    transform: translateY(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(-80px); }
+  80% { opacity: 1; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Hover effect */
 .job-card:hover {
   box-shadow: 0 0 48px 8px #c037ff29, 0 0 6px #6141f7ee;
   transform: scale(1.027);
@@ -120,7 +110,7 @@
 }
 
 .job-about {
-  margin: 0.7rem 0 0 0;
+  margin: 0.7rem 0 0;
   font-size: 1rem;
   color: #c7baff;
 }
@@ -141,8 +131,6 @@
   overflow: hidden;
   transition: transform 0.22s cubic-bezier(.22,.68,.65,1.12), box-shadow 0.23s;
   z-index: 1;
-  will-change: transform;
-  outline: none;
   user-select: none;
   letter-spacing: 1.5px;
   animation: pulseBtn 2s ease-in-out infinite;
@@ -204,7 +192,7 @@
     gap: 1.25rem;
   }
   .job-card {
-    padding: 1.2rem 0.8rem 1rem 0.8rem;
+    padding: 1.2rem 0.8rem 1rem;
     font-size: 0.97rem;
   }
   .animate-gradient-title {
@@ -226,4 +214,14 @@
     line-height: 1.22;
     padding-top: 2vw;
   }
+}
+
+/* Force all headings inside Careers Page to be white */
+.careers-container h1,
+.careers-container h2,
+.careers-container h3,
+.careers-container h4,
+.careers-container h5,
+.careers-container h6 {
+  color: #ffffff !important;
 }

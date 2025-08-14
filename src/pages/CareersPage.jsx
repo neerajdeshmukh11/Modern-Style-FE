@@ -1,6 +1,8 @@
 import React from "react";
 import "./CareersPage.css";
 import { Link, useNavigate } from "react-router-dom";
+// ✅ Import your background image asset
+import backgroundImage from "../assets/hero/hero-background.jpg";
 
 const jobs = [
   {
@@ -73,7 +75,16 @@ const CareersPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="careers-background">
+    <div
+      className="careers-background"
+      style={{
+        backgroundImage: `url(${backgroundImage})`, // ✅ imported fixed background
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed"
+      }}
+    >
       <div className="careers-container">
         <h1 className="animate-gradient-title shadowed-title">
           Careers
@@ -86,7 +97,7 @@ const CareersPage = () => {
           {jobs.map((job, idx) => (
             <Link
               key={job.id}
-              to={`/job#${job.id}`} // ✅ Link to specific section
+              to={`/job#${job.id}`}
               style={{
                 textDecoration: "none",
                 color: "inherit",
@@ -110,7 +121,7 @@ const CareersPage = () => {
         </div>
       </div>
 
-      {/* Global Apply Now — goes to top of JobDetailsPage */}
+      {/* Global Apply Now — top of JobDetailsPage */}
       <button
         className="animated-apply-btn fixed-apply-btn"
         onClick={() => navigate("/job")}
