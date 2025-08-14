@@ -1,9 +1,9 @@
 import { curve, heroBackground } from "../assets";
 import Section from "./Section";
-import { BackgroundCircles, BottomLine } from "./design/Hero";
+import { BackgroundCircles, } from "./design/Hero";
 import { useRef } from "react";
 
-// import HeroSlider from "./HeroSlider"; // Import your slider component
+import HeroSlider from "./HeroSlider";
 
 const Hero = () => {
   const parallaxRef = useRef(null);
@@ -34,17 +34,14 @@ const Hero = () => {
           <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
             Transform your workflows and accelerate growth through custom AI, software integrations, and digital expertise.
           </p>
-
-          {/* Add some spacing before slider */}
-          {/* <div className="mt-16">
-            <HeroSlider />
-          </div> */}
         </div>
         <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">
           <BackgroundCircles />
         </div>
+        <div className="mt-16">
+          <HeroSlider />
+        </div>
       </div>
-      <BottomLine />
     </Section>
   );
 };

@@ -38,7 +38,13 @@ const App = () => {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
+              
+              {/* Existing Services route */}
               <Route path="/services" element={<ServicesPage />} />
+
+              {/* ✅ Added alternate path */}
+              <Route path="/our-services" element={<ServicesPage />} />
+
               <Route path="/blogs" element={<BlogsPage />} />
               <Route path="/careers" element={<CareersPage />} />
               <Route path="/job" element={<JobDetailsPage />} />

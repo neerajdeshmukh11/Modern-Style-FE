@@ -1,8 +1,11 @@
 .details-background {
   min-height: 100vh;
   width: 100%;
-  background: url('./hero-background.jpg') center center/cover no-repeat,
-    linear-gradient(120deg, #2c164d 0%, #1a1a30 80%);
+  background-image: url('./hero-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
   justify-content: center;
   padding: 2rem;
@@ -26,13 +29,14 @@
   text-shadow: 0 4px 24px #0b001b, 0 2px 0 #b383ee70;
 }
 
+/* ✅ Transparent card background */
 .job-details-card {
-  background: linear-gradient(120deg, rgba(68, 20, 104, 0.85), rgba(21, 19, 43, 0.92) 80%);
+  background: transparent; /* removed purple gradient */
   padding: 1.5rem;
   margin-bottom: 2rem;
   border-radius: 16px;
-  box-shadow: 0 0 24px 6px #6c26a121;
-  border: 1px solid #5e1cd361;
+  border: 1px solid rgba(255, 255, 255, 0.15); /* optional light border for separation */
+  box-shadow: 0 0 24px 6px rgba(0, 0, 0, 0.15);  /* optional subtle shadow */
 }
 
 .job-details-header {
@@ -85,4 +89,14 @@ ul {
 }
 .apply-btn-side:hover {
   transform: scale(1.05);
+}
+
+/* Force all headings in Job Details page to be white */
+.details-container h1,
+.details-container h2,
+.details-container h3,
+.details-container h4,
+.details-container h5,
+.details-container h6 {
+  color: #ffffff !important;
 }

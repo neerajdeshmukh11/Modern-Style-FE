@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './ContactPage.css'; // Assuming you have a CSS file for styling
+import backgroundImage from '../assets/hero/hero-background.jpg';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -9,7 +10,7 @@ const ContactPage = () => {
     message: ''
   });
 
-  // State for form submission status and message
+  // State for form submission status
   const [submitStatus, setSubmitStatus] = useState(null); // 'success', 'error', 'submitting', 'duplicate'
 
   const handleInputChange = (e) => {
@@ -77,8 +78,17 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="min-h-screen w-full relative overflow-hidden">
-      {/* Background Image */}
+    <div
+      className="min-h-screen w-full relative overflow-hidden"
+      style={{
+        backgroundImage:`url(${backgroundImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed"
+      }}
+    >
+      {/* Background Image & Overlay remain exactly as before */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
@@ -103,12 +113,13 @@ const ContactPage = () => {
 
           {/* Form Container */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-6xl">
+
             {/* Contact Form */}
             <div className="contact-form backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl p-8 shadow-2xl">
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Hidden input for Web3Forms access key */}
                 <input type="hidden" name="access_key" value="9b43c779-5372-4cd9-a2b4-967e8d1cc9f7" />
-                {/* You can also add a hidden honeypot field for spam protection (optional) */}
+                {/* Optional honeypot field */}
                 <input type="hidden" name="botcheck" className="honeypot-field" />
 
                 <div className="form-group">
@@ -142,6 +153,7 @@ const ContactPage = () => {
                     required
                   />
                 </div>
+
                 <div className="form-group">
                   <label htmlFor="message" className="block text-sm font-semibold text-white/95 mb-2 uppercase tracking-wider">
                     Message
@@ -161,7 +173,7 @@ const ContactPage = () => {
                 <button 
                   type="submit" 
                   className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-purple-500/50 uppercase tracking-wide"
-                  disabled={submitStatus === 'submitting'} // Disable button during submission
+                  disabled={submitStatus === 'submitting'}
                 >
                   {submitStatus === 'submitting' ? 'Sending...' : 'Send Message'}
                 </button>
@@ -193,7 +205,7 @@ const ContactPage = () => {
               
               <div className="contact-info-item backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all duration-300 transform hover:scale-105">
                 <h3 className="text-lg font-bold text-purple-400 mb-2 uppercase tracking-wider">Address</h3>
-                <p className="text-white/90 text-lg"> BA HUB , Office no : 03 , Sambhaji Nagar (Baif road) , Near BA  Varmont Society , Wagholi , Pune- 412207</p>
+                <p className="text-white/90 text-lg">BA HUB , Office no : 03 , Sambhaji Nagar (Baif road) , Near BA  Varmont Society , Wagholi , Pune- 412207</p>
               </div>
 
               {/* Google Map Embed */}

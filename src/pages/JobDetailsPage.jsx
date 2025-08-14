@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import "./JobDetailsPage.css";
+// ✅ Import your background asset
+import backgroundImage from "../assets/hero/hero-background.jpg";
 
 const jobDetails = [
   {
@@ -202,7 +204,7 @@ const jobDetails = [
 const JobDetailsPage = () => {
   const location = useLocation();
 
-  // Smooth scroll to the section if hash is present
+  // Smooth scroll to section if hash present
   useEffect(() => {
     if (location.hash) {
       const element = document.getElementById(location.hash.replace("#", ""));
@@ -223,7 +225,16 @@ const JobDetailsPage = () => {
   };
 
   return (
-    <div className="details-background">
+    <div
+      className="details-background"
+      style={{
+        backgroundImage: `url(${backgroundImage})`, // ✅ fixed background image
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed"
+      }}
+    >
       <div className="details-container">
         <h1 className="details-main-title">Job Details</h1>
         {jobDetails.map((job, idx) => (
