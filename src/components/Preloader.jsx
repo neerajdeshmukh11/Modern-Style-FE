@@ -14,9 +14,9 @@ export default function Preloader() {
       {/* Only Animated Text (no image, no navbar) */}
       <div className="relative z-10 flex flex-col items-center">
         <div className="mt-10 text-center animate-fadeIn">
-          <h2 className="text-2xl font-bold tracking-wide text-white neon-text drop-shadow-lg">
+          <h1 className="text-2xl font-bold tracking-wide text-white neon-text drop-shadow-lg">
             Loading your <span className="text-ai-blue">AI</span> Experience <br /> with Encegen
-          </h2>
+          </h1>
           <div className="mt-2 flex items-center justify-center gap-1">
             <span className="preloader-dot delay-0"></span>
             <span className="preloader-dot delay-100"></span>

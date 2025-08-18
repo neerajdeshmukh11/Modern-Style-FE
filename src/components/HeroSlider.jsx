@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom'; // ✅ for navigation to Services page
 import "./HeroSlider.css";
+import b1 from '../assets/b1.jpeg'; // ✅ Importing an image for the first slide
 
 const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -10,7 +11,7 @@ const HeroSlider = () => {
     {
       title: "AI Research & Custom AI Solutions",
       description: "Cutting-edge artificial intelligence research and custom solutions for enterprises.",
-      image: "/lovable-uploads/444a43f2-1180-4bc4-8e7a-3825ce1d3226.png"
+      image: b1
     },
     {
       title: "Custom Software Development & Integration",

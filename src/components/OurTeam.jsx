@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight, Linkedin, Mail } from 'lucide-react';
 import "./OurTeam.css";
+import AG from '../assets/AmarGite.jpg'; 
+import SG from '../assets/SaurabhGite.jpg'; 
+import ND from '../assets/NeerajDeshmukh.jpeg'; 
 
 const OurTeam = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -8,25 +11,25 @@ const OurTeam = () => {
   const teamMembers = [
     {
       id: 1,
-      name: "John Doe",
-      position: "CEO & Founder",
-      image: "/lovable-uploads/444a43f2-1180-4bc4-8e7a-3825ce1d3226.png",
+      name: "Amar Gite",
+      position: "Co-Founder",
+      image: AG,
       linkedin: "#",
       email: "john@encegen.com"
     },
     {
       id: 2,
-      name: "Jane Smith",
-      position: "CTO",
-      image: "/lovable-uploads/444a43f2-1180-4bc4-8e7a-3825ce1d3226.png",
+      name: "Saurabh Anil Gite",
+      position: "Managing Director",
+      image: SG,
       linkedin: "#",
       email: "jane@encegen.com"
     },
     {
       id: 3,
-      name: "Mike Johnson",
-      position: "Lead AI Researcher",
-      image: "/lovable-uploads/444a43f2-1180-4bc4-8e7a-3825ce1d3226.png",
+      name: "Neeraj Deshmukh",
+      position: "Web Developer",
+      image: ND,
       linkedin: "#",
       email: "mike@encegen.com"
     },

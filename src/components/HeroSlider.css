@@ -9,12 +9,15 @@
 
 .slider-wrapper {
   position: relative;
-  height: 500px;
+  /* Remove fixed height */
+  min-height: 400px;    /* Optional: ensures some minimum size */
+  max-height: 600px;    /* Optional: max height for larger screens */
 }
 
 @media (min-width: 768px) {
   .slider-wrapper {
-    height: 600px;
+    min-height: 500px;
+    max-height: 600px;
   }
 }
 
@@ -42,7 +45,7 @@
 .slide-content {
   display: grid;
   grid-template-columns: 1fr;
-  height: 100%;
+  /* Remove height 100% to prevent conflict */
 }
 
 @media (min-width: 1024px) {
@@ -128,17 +131,30 @@
 .slide-image-wrapper {
   position: relative;
   width: 100%;
-  height: 100%;
   max-width: 28rem;
   margin: 0 auto;
+
+  /* Fixed aspect ratio matching image ratio */
+  aspect-ratio: 16/9;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;            /* Background for letterbox space */
+  border-radius: 1rem;
+  overflow: hidden;
+  /* Removed height: 100% */
 }
 
 .slide-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
   border-radius: 1rem;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  display: block;
 }
 
 .slider-controls {
